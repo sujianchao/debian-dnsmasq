@@ -5,7 +5,6 @@ MAINTAINER SuJianchao <sujianchao@gmail.com>
 ENV REFRESHED_AT 2016-07-22
 
 RUN apt-get update && apt-get install -y \
-		vi \
 		wget \
 		curl \
 		cron \
