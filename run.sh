@@ -23,8 +23,6 @@ if [ ! -f /.root_pw_set ]; then
 	/set_root_pw.sh
 fi
 
-rm -rvf /etc/dnsmasq.conf \
-	&&wget -c -t 0  -O /etc/dnsmasq.conf https://github.com/sujianchao/GoWorld/raw/master/dnsmasq.conf
 	
 /etc/init.d/dnsmasq restart &&
 exec /usr/sbin/sshd -D
