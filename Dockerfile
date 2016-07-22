@@ -23,8 +23,8 @@ ENV AUTHORIZED_KEYS **None**
 
 
 #Configure password and dnsmasq
-RUN rm -rvf /etc/dnsmasq.conf \
-	&&wget -c -t 0  -O /etc/dnsmasq.conf https://github.com/sujianchao/GoWorld/raw/master/dnsmasq.conf
+COPY conf/dnsmasq.conf /etc/dnsmasq.conf
+
 #everyday update dnsmasq.conf
 RUN echo "0 3 * * * /run.sh" >> /etc/crontab
 
