@@ -24,11 +24,15 @@ ENV AUTHORIZED_KEYS **None**
 
 
 #Configure password and dnsmasq
+RUN rm -rvf /etc/dnsmasq.conf \
+	&&wget -c -t 0  -O /etc/dnsmasq.conf https://github.com/sujianchao/GoWorld/raw/master/dnsmasq.conf
+#everyday update dnsmasq.conf
+RUN echo "0 3 * * * /run.sh" >> /etc/crontab
+
+
 ADD set_root_pw.sh /set_root_pw.sh
 ADD run.sh /run.sh
 RUN chmod +x /*.sh
-#everyday update dnsmasq.conf
-RUN echo "0 3 * * * /run.sh" >> /etc/crontab
 
 EXPOSE 22 53 53/udp
 

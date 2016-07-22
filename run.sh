@@ -26,4 +26,5 @@ fi
 rm -rvf /etc/dnsmasq.conf \
 	&&wget -c -t 0  -O /etc/dnsmasq.conf https://github.com/sujianchao/GoWorld/raw/master/dnsmasq.conf
 	
-exec dnsmasq -k
+/etc/init.d/dnsmasq restart &&
+exec /usr/sbin/sshd -D
