@@ -24,5 +24,7 @@ if [ ! -f /.root_pw_set ]; then
 fi
 
 	
-dnsmasq -k &&
-exec /usr/sbin/sshd -D
+#dnsmasq -k &&
+#exec /usr/sbin/sshd -D
+
+exec dnsmasq -k
