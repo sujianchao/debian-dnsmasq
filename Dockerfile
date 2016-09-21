@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y \
 		openssh-server \
 		pwgen \
 		dnsmasq \
+		vim  \
 	--no-install-recommends && rm -r /var/lib/apt/lists/*
 	
 RUN mkdir -p /var/run/sshd \
