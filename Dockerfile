@@ -27,7 +27,7 @@ ENV AUTHORIZED_KEYS **None**
 COPY conf/dnsmasq.conf /etc/dnsmasq.conf
 
 #everyday update dnsmasq.conf
-RUN echo "0 3 * * * rm -rvf /etc/dnsmasq.conf && wget -c -t 0 -b  -O /etc/dnsmasq.conf https://github.com/sujianchao/GoWorld/raw/master/dnsmasq.conf" >> /etc/crontab
+RUN echo "0 3 * * * rm -rvf /etc/dnsmasq.conf && wget --no-check-certificate -c -t 0 -b  -O /etc/dnsmasq.conf https://github.com/sujianchao/GoWorld/raw/master/dnsmasq.conf" >> /etc/crontab
 
 
 ADD set_root_pw.sh /set_root_pw.sh
